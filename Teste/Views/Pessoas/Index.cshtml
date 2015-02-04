@@ -1,0 +1,177 @@
+﻿@model IEnumerable<Teste.Models.pessoas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_prof)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idSap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCurto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargoPt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargoEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargoEs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foneFixo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foneMovel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.curriculoPt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.curriculoEn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.curriculoEs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.observacoes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foneContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empresas_idEmpresa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_prof)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idSap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeCurto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cargoPt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cargoEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cargoEs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foneFixo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foneMovel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.curriculoPt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.curriculoEn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.curriculoEs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.observacoes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foneContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empresas_idEmpresa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

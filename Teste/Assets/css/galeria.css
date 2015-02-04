@@ -1,0 +1,31 @@
+body {
+	background: #00b9f2;
+	margin    : 0;
+	color: #fff;
+}
+
+.page-header { margin-bottom: 0; }
+
+#header-image {	background: url("http://en.futurecom.com.br/images/bg-logo-futurecom.png") no-repeat top center #00b9f2; }
+
+#header-img { padding: 20px; }
+
+.foto-mascara {
+	margin: 15px 0;
+	height: 140px;
+	overflow: hidden;
+}
+
+.foto-mascara img { 
+	box-shadow: 0 0 4px #333;
+	-moz-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.foto-mascara img:hover {
+	box-shadow: 0 0 8px #000;
+	-moz-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}

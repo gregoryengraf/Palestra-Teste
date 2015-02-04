@@ -1,0 +1,66 @@
+﻿@model Administrativo.Models.empresas
+
+@{
+    ViewBag.Title = "Adicionar Empresa";
+}
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="page-header">@ViewBag.Title</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index")">Empresas</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.empresa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.empresa)
+            @Html.ValidationMessageFor(model => model.empresa)
+        </div>*@
+
+        <div class="form-group">
+            <label>Empresa</label>
+            @Html.TextBoxFor(model => model.empresa, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.empresa)
+        </div>
+
+        <div class="form-group">
+            <label>Logo</label>
+            @Html.TextBoxFor(model => model.logo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.logo)
+        </div>
+
+        <div class="form-group">
+            <label>Categoria</label>
+            @Html.DropDownListFor(model => model.categoria,
+                    new SelectList(new List<SelectListItem> {
+                    new SelectListItem{Value="Premium", Text="Premium"},
+                    new SelectListItem{Value="Master", Text="Master"},
+                    new SelectListItem{Value="Gold", Text="Gold"},
+                    new SelectListItem{Value="Standard", Text="Standard"},
+                    new SelectListItem{Value="Convidada", Text="Convidada"}},
+                "Value", "Text"), new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Vagas em Palestras</label>
+            @Html.TextBoxFor(model => model.vagasEventos, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.vagasEventos)
+        </div>
+
+        <p>
+            <input class="btn btn-success" type="submit" value="Adicionar" />
+        </p>
+}

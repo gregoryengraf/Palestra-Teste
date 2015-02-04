@@ -1,0 +1,57 @@
+﻿@model IEnumerable<UsandoParitialViews.Models.pessoas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_prof)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idSap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCurto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_prof)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idSap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeCurto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id_prof }) |
+            @Html.ActionLink("Details", "Details", new {id=item.id_prof}) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id_prof })
+        </td>
+    </tr>
+}
+
+</table>

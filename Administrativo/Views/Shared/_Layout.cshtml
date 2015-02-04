@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Futurecom's Customized Admin Template">
+    <meta name="author" content="Futurecom Development Team">
+
+    <!-- Common head includes -->
+    @Html.Partial("PV/PV_Head")
+    <link href="~/Assets/Futureglyphs/style.css" rel="stylesheet" />
+    <title>@ViewBag.Title | Sistema Palestra</title>
+</head>
+
+<body role="document">
+
+    <!-- Fixed navbar -->
+    @Html.Partial("PV/PV_Navbar")
+    <!-- Fixed navmenu -->
+    @Html.Partial("PV/PV_Navmenu")
+    <!-- Canvas -->
+    <div class="canvas">
+        <div class="container-fluid">
+            @RenderBody()
+        </div><!-- /.container -->
+    </div><!-- /.canvas -->
+    <!-- Common script includes -->
+    @Html.Partial("PV/PV_Scripts")
+    @Html.Partial("PV/PV_ScriptsExtra")
+ 
+    @*@RenderSection("scripts", required: false)*@
+    <!-- Page-Level Scripts -->
+</body>
+</html>

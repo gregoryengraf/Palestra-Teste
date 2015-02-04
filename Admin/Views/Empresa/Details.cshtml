@@ -1,0 +1,50 @@
+﻿@model Admin.Models.empresas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>empresas</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idEmpresa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idEmpresa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empresa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empresa)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.logo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.logo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.categoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.vagasEventos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.vagasEventos)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

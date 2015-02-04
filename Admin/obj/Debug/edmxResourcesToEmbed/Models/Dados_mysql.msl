@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="xtreme_palestraModelStoreContainer" CdmEntityContainer="xtreme_palestraEntities">
+    <EntitySetMapping Name="auditorios">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.auditorios">
+        <MappingFragment StoreEntitySet="auditorios">
+          <ScalarProperty Name="idAuditorio" ColumnName="idAuditorio" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contatoEmpresa">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.contatoEmpresa">
+        <MappingFragment StoreEntitySet="contatoEmpresa">
+          <ScalarProperty Name="idContato" ColumnName="idContato" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="empresas_idEmpresa" ColumnName="empresas_idEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dados">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.dados">
+        <MappingFragment StoreEntitySet="dados">
+          <ScalarProperty Name="idDado" ColumnName="idDado" />
+          <ScalarProperty Name="localReuniaoPrevia" ColumnName="localReuniaoPrevia" />
+          <ScalarProperty Name="dataHoraReuniaoPrevia" ColumnName="dataHoraReuniaoPrevia" />
+          <ScalarProperty Name="observacoesReuniao" ColumnName="observacoesReuniao" />
+          <ScalarProperty Name="numeroPessoas" ColumnName="numeroPessoas" />
+          <ScalarProperty Name="horaIncio" ColumnName="horaIncio" />
+          <ScalarProperty Name="horaFim" ColumnName="horaFim" />
+          <ScalarProperty Name="observacoesFinais" ColumnName="observacoesFinais" />
+          <ScalarProperty Name="eventos_idEvento" ColumnName="eventos_idEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empresas">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.empresas">
+        <MappingFragment StoreEntitySet="empresas">
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="vagasEventos" ColumnName="vagasEventos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eventos">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.eventos">
+        <MappingFragment StoreEntitySet="eventos">
+          <ScalarProperty Name="idEvento" ColumnName="idEvento" />
+          <ScalarProperty Name="ordemSite" ColumnName="ordemSite" />
+          <ScalarProperty Name="tituloPt" ColumnName="tituloPt" />
+          <ScalarProperty Name="tituloEn" ColumnName="tituloEn" />
+          <ScalarProperty Name="tituloEs" ColumnName="tituloEs" />
+          <ScalarProperty Name="sinopsePt" ColumnName="sinopsePt" />
+          <ScalarProperty Name="sinopseEn" ColumnName="sinopseEn" />
+          <ScalarProperty Name="sinopseEs" ColumnName="sinopseEs" />
+          <ScalarProperty Name="empresas_idEmpresa" ColumnName="empresas_idEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="funcoes">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.funcoes">
+        <MappingFragment StoreEntitySet="funcoes">
+          <ScalarProperty Name="idFuncao" ColumnName="idFuncao" />
+          <ScalarProperty Name="nomeFuncao" ColumnName="nomeFuncao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pessoas">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.pessoas">
+        <MappingFragment StoreEntitySet="pessoas">
+          <ScalarProperty Name="id_prof" ColumnName="id_prof" />
+          <ScalarProperty Name="idSap" ColumnName="idSap" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="nomeCurto" ColumnName="nomeCurto" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="cargoPt" ColumnName="cargoPt" />
+          <ScalarProperty Name="cargoEn" ColumnName="cargoEn" />
+          <ScalarProperty Name="cargoEs" ColumnName="cargoEs" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="foneFixo" ColumnName="foneFixo" />
+          <ScalarProperty Name="foneMovel" ColumnName="foneMovel" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="curriculoPt" ColumnName="curriculoPt" />
+          <ScalarProperty Name="curriculoEn" ColumnName="curriculoEn" />
+          <ScalarProperty Name="curriculoEs" ColumnName="curriculoEs" />
+          <ScalarProperty Name="observacoes" ColumnName="observacoes" />
+          <ScalarProperty Name="contato" ColumnName="contato" />
+          <ScalarProperty Name="emailContato" ColumnName="emailContato" />
+          <ScalarProperty Name="foneContato" ColumnName="foneContato" />
+          <ScalarProperty Name="empresas_idEmpresa" ColumnName="empresas_idEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relFuncaoEventoPessoa">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.relFuncaoEventoPessoa">
+        <MappingFragment StoreEntitySet="relFuncaoEventoPessoa">
+          <ScalarProperty Name="idRelacao" ColumnName="idRelacao" />
+          <ScalarProperty Name="funcoes_idFuncao" ColumnName="funcoes_idFuncao" />
+          <ScalarProperty Name="pessoas_id_prof" ColumnName="pessoas_id_prof" />
+          <ScalarProperty Name="eventos_idEvento" ColumnName="eventos_idEvento" />
+          <ScalarProperty Name="ordemSite" ColumnName="ordemSite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="slots">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.slots">
+        <MappingFragment StoreEntitySet="slots">
+          <ScalarProperty Name="idSlot" ColumnName="idSlot" />
+          <ScalarProperty Name="dia" ColumnName="dia" />
+          <ScalarProperty Name="horarioInicial" ColumnName="horarioInicial" />
+          <ScalarProperty Name="horarioFinal" ColumnName="horarioFinal" />
+          <ScalarProperty Name="tipoEvento_idTipoEvento" ColumnName="tipoEvento_idTipoEvento" />
+          <ScalarProperty Name="auditorios_idAuditorio" ColumnName="auditorios_idAuditorio" />
+          <ScalarProperty Name="eventos_idEvento" ColumnName="eventos_idEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoEvento">
+      <EntityTypeMapping TypeName="xtreme_palestraModel.tipoEvento">
+        <MappingFragment StoreEntitySet="tipoEvento">
+          <ScalarProperty Name="idTipoEvento" ColumnName="idTipoEvento" />
+          <ScalarProperty Name="nomeTipoEvento" ColumnName="nomeTipoEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

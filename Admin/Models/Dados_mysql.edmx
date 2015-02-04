@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="xtreme_palestraModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="auditorios">
+          <Key>
+            <PropertyRef Name="idAuditorio" />
+          </Key>
+          <Property Name="idAuditorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="contatoEmpresa">
+          <Key>
+            <PropertyRef Name="idContato" />
+            <PropertyRef Name="empresas_idEmpresa" />
+          </Key>
+          <Property Name="idContato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="120" />
+          <Property Name="senha" Type="varchar" MaxLength="55" />
+          <Property Name="empresas_idEmpresa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dados">
+          <Key>
+            <PropertyRef Name="idDado" />
+            <PropertyRef Name="eventos_idEvento" />
+          </Key>
+          <Property Name="idDado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="localReuniaoPrevia" Type="varchar" MaxLength="55" />
+          <Property Name="dataHoraReuniaoPrevia" Type="varchar" MaxLength="45" />
+          <Property Name="observacoesReuniao" Type="varchar" MaxLength="500" />
+          <Property Name="numeroPessoas" Type="int" />
+          <Property Name="horaIncio" Type="varchar" MaxLength="45" />
+          <Property Name="horaFim" Type="varchar" MaxLength="45" />
+          <Property Name="observacoesFinais" Type="varchar" MaxLength="500" />
+          <Property Name="eventos_idEvento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empresas">
+          <Key>
+            <PropertyRef Name="idEmpresa" />
+          </Key>
+          <Property Name="idEmpresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empresa" Type="varchar" MaxLength="255" />
+          <Property Name="logo" Type="varchar" MaxLength="255" />
+          <Property Name="categoria" Type="varchar" MaxLength="255" />
+          <Property Name="vagasEventos" Type="int" />
+        </EntityType>
+        <EntityType Name="eventos">
+          <Key>
+            <PropertyRef Name="idEvento" />
+          </Key>
+          <Property Name="idEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ordemSite" Type="int" />
+          <Property Name="tituloPt" Type="varchar" MaxLength="150" />
+          <Property Name="tituloEn" Type="varchar" MaxLength="150" />
+          <Property Name="tituloEs" Type="varchar" MaxLength="150" />
+          <Property Name="sinopsePt" Type="varchar" MaxLength="400" />
+          <Property Name="sinopseEn" Type="varchar" MaxLength="400" />
+          <Property Name="sinopseEs" Type="varchar" MaxLength="400" />
+          <Property Name="empresas_idEmpresa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="funcoes">
+          <Key>
+            <PropertyRef Name="idFuncao" />
+          </Key>
+          <Property Name="idFuncao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomeFuncao" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="pessoas">
+          <Key>
+            <PropertyRef Name="id_prof" />
+            <PropertyRef Name="empresas_idEmpresa" />
+          </Key>
+          <Property Name="id_prof" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSap" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+          <Property Name="nomeCurto" Type="varchar" MaxLength="255" />
+          <Property Name="sexo" Type="varchar" MaxLength="45" />
+          <Property Name="cargoPt" Type="varchar" MaxLength="255" />
+          <Property Name="cargoEn" Type="varchar" MaxLength="255" />
+          <Property Name="cargoEs" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="foneFixo" Type="varchar" MaxLength="45" />
+          <Property Name="foneMovel" Type="varchar" MaxLength="45" />
+          <Property Name="foto" Type="varchar" MaxLength="255" />
+          <Property Name="endereco" Type="varchar" MaxLength="450" />
+          <Property Name="cidade" Type="varchar" MaxLength="120" />
+          <Property Name="estado" Type="varchar" MaxLength="120" />
+          <Property Name="pais" Type="varchar" MaxLength="120" />
+          <Property Name="cep" Type="varchar" MaxLength="45" />
+          <Property Name="curriculoPt" Type="mediumtext" />
+          <Property Name="curriculoEn" Type="mediumtext" />
+          <Property Name="curriculoEs" Type="mediumtext" />
+          <Property Name="observacoes" Type="text" />
+          <Property Name="contato" Type="varchar" MaxLength="255" />
+          <Property Name="emailContato" Type="varchar" MaxLength="255" />
+          <Property Name="foneContato" Type="varchar" MaxLength="255" />
+          <Property Name="empresas_idEmpresa" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relFuncaoEventoPessoa">
+          <Key>
+            <PropertyRef Name="idRelacao" />
+            <PropertyRef Name="funcoes_idFuncao" />
+            <PropertyRef Name="pessoas_id_prof" />
+            <PropertyRef Name="eventos_idEvento" />
+          </Key>
+          <Property Name="idRelacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="funcoes_idFuncao" Type="int" Nullable="false" />
+          <Property Name="pessoas_id_prof" Type="int" Nullable="false" />
+          <Property Name="eventos_idEvento" Type="int" Nullable="false" />
+          <Property Name="ordemSite" Type="int" />
+        </EntityType>
+        <EntityType Name="slots">
+          <Key>
+            <PropertyRef Name="idSlot" />
+            <PropertyRef Name="tipoEvento_idTipoEvento" />
+            <PropertyRef Name="auditorios_idAuditorio" />
+            <PropertyRef Name="eventos_idEvento" />
+          </Key>
+          <Property Name="idSlot" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dia" Type="int" />
+          <Property Name="horarioInicial" Type="varchar" MaxLength="10" />
+          <Property Name="horarioFinal" Type="varchar" MaxLength="10" />
+          <Property Name="tipoEvento_idTipoEvento" Type="int" Nullable="false" />
+          <Property Name="auditorios_idAuditorio" Type="int" Nullable="false" />
+          <Property Name="eventos_idEvento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoEvento">
+          <Key>
+            <PropertyRef Name="idTipoEvento" />
+          </Key>
+          <Property Name="idTipoEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomeTipoEvento" Type="varchar" MaxLength="120" />
+        </EntityType>
+        <EntityContainer Name="xtreme_palestraModelStoreContainer">
+          <EntitySet Name="auditorios" EntityType="Self.auditorios" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="contatoEmpresa" EntityType="Self.contatoEmpresa" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="dados" EntityType="Self.dados" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="empresas" EntityType="Self.empresas" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="eventos" EntityType="Self.eventos" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="funcoes" EntityType="Self.funcoes" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="pessoas" EntityType="Self.pessoas" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="relFuncaoEventoPessoa" EntityType="Self.relFuncaoEventoPessoa" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="slots" EntityType="Self.slots" Schema="xtreme_palestra" store:Type="Tables" />
+          <EntitySet Name="tipoEvento" EntityType="Self.tipoEvento" Schema="xtreme_palestra" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="xtreme_palestraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="auditorios">
+          <Key>
+            <PropertyRef Name="idAuditorio" />
+          </Key>
+          <Property Name="idAuditorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="contatoEmpresa">
+          <Key>
+            <PropertyRef Name="idContato" />
+            <PropertyRef Name="empresas_idEmpresa" />
+          </Key>
+          <Property Name="idContato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="senha" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="empresas_idEmpresa" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dados">
+          <Key>
+            <PropertyRef Name="idDado" />
+            <PropertyRef Name="eventos_idEvento" />
+          </Key>
+          <Property Name="idDado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="localReuniaoPrevia" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="dataHoraReuniaoPrevia" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="observacoesReuniao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="numeroPessoas" Type="Int32" />
+          <Property Name="horaIncio" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="horaFim" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="observacoesFinais" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="eventos_idEvento" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empresas">
+          <Key>
+            <PropertyRef Name="idEmpresa" />
+          </Key>
+          <Property Name="idEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empresa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="logo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="categoria" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="vagasEventos" Type="Int32" />
+        </EntityType>
+        <EntityType Name="eventos">
+          <Key>
+            <PropertyRef Name="idEvento" />
+          </Key>
+          <Property Name="idEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ordemSite" Type="Int32" />
+          <Property Name="tituloPt" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="tituloEn" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="tituloEs" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="sinopsePt" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="sinopseEn" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="sinopseEs" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="empresas_idEmpresa" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="funcoes">
+          <Key>
+            <PropertyRef Name="idFuncao" />
+          </Key>
+          <Property Name="idFuncao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomeFuncao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pessoas">
+          <Key>
+            <PropertyRef Name="id_prof" />
+            <PropertyRef Name="empresas_idEmpresa" />
+          </Key>
+          <Property Name="id_prof" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSap" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nomeCurto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sexo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="cargoPt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cargoEn" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cargoEs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="foneFixo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="foneMovel" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="foto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="endereco" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="pais" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="cep" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="curriculoPt" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="curriculoEn" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="curriculoEs" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="observacoes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="contato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="emailContato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="foneContato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="empresas_idEmpresa" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relFuncaoEventoPessoa">
+          <Key>
+            <PropertyRef Name="idRelacao" />
+            <PropertyRef Name="funcoes_idFuncao" />
+            <PropertyRef Name="pessoas_id_prof" />
+            <PropertyRef Name="eventos_idEvento" />
+          </Key>
+          <Property Name="idRelacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="funcoes_idFuncao" Type="Int32" Nullable="false" />
+          <Property Name="pessoas_id_prof" Type="Int32" Nullable="false" />
+          <Property Name="eventos_idEvento" Type="Int32" Nullable="false" />
+          <Property Name="ordemSite" Type="Int32" />
+        </EntityType>
+        <EntityType Name="slots">
+          <Key>
+            <PropertyRef Name="idSlot" />
+            <PropertyRef Name="tipoEvento_idTipoEvento" />
+            <PropertyRef Name="auditorios_idAuditorio" />
+            <PropertyRef Name="eventos_idEvento" />
+          </Key>
+          <Property Name="idSlot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dia" Type="Int32" />
+          <Property Name="horarioInicial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="horarioFinal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="tipoEvento_idTipoEvento" Type="Int32" Nullable="false" />
+          <Property Name="auditorios_idAuditorio" Type="Int32" Nullable="false" />
+          <Property Name="eventos_idEvento" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoEvento">
+          <Key>
+            <PropertyRef Name="idTipoEvento" />
+          </Key>
+          <Property Name="idTipoEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomeTipoEvento" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="xtreme_palestraEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="auditorios" EntityType="Self.auditorios" />
+          <EntitySet Name="contatoEmpresa" EntityType="Self.contatoEmpresa" />
+          <EntitySet Name="dados" EntityType="Self.dados" />
+          <EntitySet Name="empresas" EntityType="Self.empresas" />
+          <EntitySet Name="eventos" EntityType="Self.eventos" />
+          <EntitySet Name="funcoes" EntityType="Self.funcoes" />
+          <EntitySet Name="pessoas" EntityType="Self.pessoas" />
+          <EntitySet Name="relFuncaoEventoPessoa" EntityType="Self.relFuncaoEventoPessoa" />
+          <EntitySet Name="slots" EntityType="Self.slots" />
+          <EntitySet Name="tipoEvento" EntityType="Self.tipoEvento" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="xtreme_palestraModelStoreContainer" CdmEntityContainer="xtreme_palestraEntities">
+          <EntitySetMapping Name="auditorios">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.auditorios">
+              <MappingFragment StoreEntitySet="auditorios">
+                <ScalarProperty Name="idAuditorio" ColumnName="idAuditorio" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contatoEmpresa">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.contatoEmpresa">
+              <MappingFragment StoreEntitySet="contatoEmpresa">
+                <ScalarProperty Name="idContato" ColumnName="idContato" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="empresas_idEmpresa" ColumnName="empresas_idEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dados">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.dados">
+              <MappingFragment StoreEntitySet="dados">
+                <ScalarProperty Name="idDado" ColumnName="idDado" />
+                <ScalarProperty Name="localReuniaoPrevia" ColumnName="localReuniaoPrevia" />
+                <ScalarProperty Name="dataHoraReuniaoPrevia" ColumnName="dataHoraReuniaoPrevia" />
+                <ScalarProperty Name="observacoesReuniao" ColumnName="observacoesReuniao" />
+                <ScalarProperty Name="numeroPessoas" ColumnName="numeroPessoas" />
+                <ScalarProperty Name="horaIncio" ColumnName="horaIncio" />
+                <ScalarProperty Name="horaFim" ColumnName="horaFim" />
+                <ScalarProperty Name="observacoesFinais" ColumnName="observacoesFinais" />
+                <ScalarProperty Name="eventos_idEvento" ColumnName="eventos_idEvento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empresas">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.empresas">
+              <MappingFragment StoreEntitySet="empresas">
+                <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="vagasEventos" ColumnName="vagasEventos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="eventos">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.eventos">
+              <MappingFragment StoreEntitySet="eventos">
+                <ScalarProperty Name="idEvento" ColumnName="idEvento" />
+                <ScalarProperty Name="ordemSite" ColumnName="ordemSite" />
+                <ScalarProperty Name="tituloPt" ColumnName="tituloPt" />
+                <ScalarProperty Name="tituloEn" ColumnName="tituloEn" />
+                <ScalarProperty Name="tituloEs" ColumnName="tituloEs" />
+                <ScalarProperty Name="sinopsePt" ColumnName="sinopsePt" />
+                <ScalarProperty Name="sinopseEn" ColumnName="sinopseEn" />
+                <ScalarProperty Name="sinopseEs" ColumnName="sinopseEs" />
+                <ScalarProperty Name="empresas_idEmpresa" ColumnName="empresas_idEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="funcoes">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.funcoes">
+              <MappingFragment StoreEntitySet="funcoes">
+                <ScalarProperty Name="idFuncao" ColumnName="idFuncao" />
+                <ScalarProperty Name="nomeFuncao" ColumnName="nomeFuncao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pessoas">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.pessoas">
+              <MappingFragment StoreEntitySet="pessoas">
+                <ScalarProperty Name="id_prof" ColumnName="id_prof" />
+                <ScalarProperty Name="idSap" ColumnName="idSap" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="nomeCurto" ColumnName="nomeCurto" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="cargoPt" ColumnName="cargoPt" />
+                <ScalarProperty Name="cargoEn" ColumnName="cargoEn" />
+                <ScalarProperty Name="cargoEs" ColumnName="cargoEs" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="foneFixo" ColumnName="foneFixo" />
+                <ScalarProperty Name="foneMovel" ColumnName="foneMovel" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="curriculoPt" ColumnName="curriculoPt" />
+                <ScalarProperty Name="curriculoEn" ColumnName="curriculoEn" />
+                <ScalarProperty Name="curriculoEs" ColumnName="curriculoEs" />
+                <ScalarProperty Name="observacoes" ColumnName="observacoes" />
+                <ScalarProperty Name="contato" ColumnName="contato" />
+                <ScalarProperty Name="emailContato" ColumnName="emailContato" />
+                <ScalarProperty Name="foneContato" ColumnName="foneContato" />
+                <ScalarProperty Name="empresas_idEmpresa" ColumnName="empresas_idEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="relFuncaoEventoPessoa">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.relFuncaoEventoPessoa">
+              <MappingFragment StoreEntitySet="relFuncaoEventoPessoa">
+                <ScalarProperty Name="idRelacao" ColumnName="idRelacao" />
+                <ScalarProperty Name="funcoes_idFuncao" ColumnName="funcoes_idFuncao" />
+                <ScalarProperty Name="pessoas_id_prof" ColumnName="pessoas_id_prof" />
+                <ScalarProperty Name="eventos_idEvento" ColumnName="eventos_idEvento" />
+                <ScalarProperty Name="ordemSite" ColumnName="ordemSite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="slots">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.slots">
+              <MappingFragment StoreEntitySet="slots">
+                <ScalarProperty Name="idSlot" ColumnName="idSlot" />
+                <ScalarProperty Name="dia" ColumnName="dia" />
+                <ScalarProperty Name="horarioInicial" ColumnName="horarioInicial" />
+                <ScalarProperty Name="horarioFinal" ColumnName="horarioFinal" />
+                <ScalarProperty Name="tipoEvento_idTipoEvento" ColumnName="tipoEvento_idTipoEvento" />
+                <ScalarProperty Name="auditorios_idAuditorio" ColumnName="auditorios_idAuditorio" />
+                <ScalarProperty Name="eventos_idEvento" ColumnName="eventos_idEvento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoEvento">
+            <EntityTypeMapping TypeName="xtreme_palestraModel.tipoEvento">
+              <MappingFragment StoreEntitySet="tipoEvento">
+                <ScalarProperty Name="idTipoEvento" ColumnName="idTipoEvento" />
+                <ScalarProperty Name="nomeTipoEvento" ColumnName="nomeTipoEvento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

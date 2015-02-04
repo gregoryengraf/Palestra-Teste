@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="xtreme_palestraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="auditorios">
+    <Key>
+      <PropertyRef Name="idAuditorio" />
+    </Key>
+    <Property Name="idAuditorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="contatoEmpresa">
+    <Key>
+      <PropertyRef Name="idContato" />
+      <PropertyRef Name="empresas_idEmpresa" />
+    </Key>
+    <Property Name="idContato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="senha" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="empresas_idEmpresa" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dados">
+    <Key>
+      <PropertyRef Name="idDado" />
+      <PropertyRef Name="eventos_idEvento" />
+    </Key>
+    <Property Name="idDado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="localReuniaoPrevia" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="dataHoraReuniaoPrevia" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="observacoesReuniao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="numeroPessoas" Type="Int32" />
+    <Property Name="horaIncio" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="horaFim" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="observacoesFinais" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="eventos_idEvento" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="empresas">
+    <Key>
+      <PropertyRef Name="idEmpresa" />
+    </Key>
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empresa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="logo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="categoria" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="vagasEventos" Type="Int32" />
+  </EntityType>
+  <EntityType Name="eventos">
+    <Key>
+      <PropertyRef Name="idEvento" />
+    </Key>
+    <Property Name="idEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ordemSite" Type="Int32" />
+    <Property Name="tituloPt" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="tituloEn" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="tituloEs" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="sinopsePt" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="sinopseEn" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="sinopseEs" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="empresas_idEmpresa" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="funcoes">
+    <Key>
+      <PropertyRef Name="idFuncao" />
+    </Key>
+    <Property Name="idFuncao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomeFuncao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pessoas">
+    <Key>
+      <PropertyRef Name="id_prof" />
+      <PropertyRef Name="empresas_idEmpresa" />
+    </Key>
+    <Property Name="id_prof" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idSap" Type="Int32" />
+    <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nomeCurto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="cargoPt" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cargoEn" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cargoEs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="foneFixo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="foneMovel" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="endereco" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="cidade" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="cep" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="curriculoPt" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="curriculoEn" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="curriculoEs" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="observacoes" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="contato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="emailContato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="foneContato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="empresas_idEmpresa" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="relFuncaoEventoPessoa">
+    <Key>
+      <PropertyRef Name="idRelacao" />
+      <PropertyRef Name="funcoes_idFuncao" />
+      <PropertyRef Name="pessoas_id_prof" />
+      <PropertyRef Name="eventos_idEvento" />
+    </Key>
+    <Property Name="idRelacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="funcoes_idFuncao" Type="Int32" Nullable="false" />
+    <Property Name="pessoas_id_prof" Type="Int32" Nullable="false" />
+    <Property Name="eventos_idEvento" Type="Int32" Nullable="false" />
+    <Property Name="ordemSite" Type="Int32" />
+  </EntityType>
+  <EntityType Name="slots">
+    <Key>
+      <PropertyRef Name="idSlot" />
+      <PropertyRef Name="tipoEvento_idTipoEvento" />
+      <PropertyRef Name="auditorios_idAuditorio" />
+      <PropertyRef Name="eventos_idEvento" />
+    </Key>
+    <Property Name="idSlot" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dia" Type="Int32" />
+    <Property Name="horarioInicial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="horarioFinal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tipoEvento_idTipoEvento" Type="Int32" Nullable="false" />
+    <Property Name="auditorios_idAuditorio" Type="Int32" Nullable="false" />
+    <Property Name="eventos_idEvento" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipoEvento">
+    <Key>
+      <PropertyRef Name="idTipoEvento" />
+    </Key>
+    <Property Name="idTipoEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomeTipoEvento" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="xtreme_palestraEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="auditorios" EntityType="Self.auditorios" />
+    <EntitySet Name="contatoEmpresa" EntityType="Self.contatoEmpresa" />
+    <EntitySet Name="dados" EntityType="Self.dados" />
+    <EntitySet Name="empresas" EntityType="Self.empresas" />
+    <EntitySet Name="eventos" EntityType="Self.eventos" />
+    <EntitySet Name="funcoes" EntityType="Self.funcoes" />
+    <EntitySet Name="pessoas" EntityType="Self.pessoas" />
+    <EntitySet Name="relFuncaoEventoPessoa" EntityType="Self.relFuncaoEventoPessoa" />
+    <EntitySet Name="slots" EntityType="Self.slots" />
+    <EntitySet Name="tipoEvento" EntityType="Self.tipoEvento" />
+  </EntityContainer>
+</Schema>

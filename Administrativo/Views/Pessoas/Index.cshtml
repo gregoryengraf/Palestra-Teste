@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Administrativo.Models.pessoas>
+
+@{
+    ViewBag.Title = "Pessoas";
+}
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="page-header">@ViewBag.Title</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-labeled btn-success" href="@Url.Action("Create")"><span class="btn-label"><i class="icon-estrela-02"></i></span>Adicionar Pessoa</a>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-xs-12 col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                    <tr>
+                        <th>
+                            ID Sap
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Nome Curto
+                        </th>
+                        <th>
+                            Sexo
+                        </th>
+                        <th>
+                            Cargo PT
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Fone Fixo
+                        </th>
+                        <th>
+                            Fone Móvel
+                        </th>
+                        <th>
+                            Foto
+                        </th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.idSap)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nomeCurto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.sexo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.cargoPt)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.foneFixo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.foneMovel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.foto)
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-info" href="@Url.Action("Edit", new { id = item.id_prof })"><i class="icon-engrenagem-02 icon-1_5x"></i></a>
+                                    <a class="btn btn-warning " href="@Url.Action("Details", new { id = item.id_prof })"><i class="icon-lupa icon-1_5x"></i></a>
+                                    <a class="delete-confirmation btn btn-danger" href="@Url.Action("Delete", new { id = item.id_prof })"><i class="icon-lixeira-02 icon-1_5x"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+        <hr />
+        <div class="table-responsive">
+            <h2>Teste de Partial View com outra model</h2>
+            @Html.Partial("~/Shared/PV/PV_Empresas", Model)
+        </div>
+    </div>
+</div>
+<!-- /.row -->

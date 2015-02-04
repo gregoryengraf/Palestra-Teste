@@ -1,0 +1,48 @@
+.fancybox-nav {
+    width: 60px;       
+}
+
+.fancybox-nav span {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.fancybox-nav:hover span {
+    opacity: 1;
+}
+
+.fancybox-next {
+    right: -60px;
+}
+
+.fancybox-prev {
+    left: -60px;
+}
+
+#fancybox-links {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    padding-top: 10px;
+    list-style: none;
+    text-align: center;
+    z-index: 99999;
+}
+
+#fancybox-links li {
+    display: inline;
+    padding: 0 5px;
+}
+
+#fancybox-links li label {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+#fancybox-links li.active label {
+    background-color: white;
+}

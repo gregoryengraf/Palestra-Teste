@@ -1,0 +1,68 @@
+﻿@model Admin.Models.empresas
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>empresas</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idEmpresa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idEmpresa)
+            @Html.ValidationMessageFor(model => model.idEmpresa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.empresa)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.empresa)
+            @Html.ValidationMessageFor(model => model.empresa)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.logo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.logo)
+            @Html.ValidationMessageFor(model => model.logo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.categoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.categoria)
+            @Html.ValidationMessageFor(model => model.categoria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.vagasEventos)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.vagasEventos)
+            @Html.ValidationMessageFor(model => model.vagasEventos)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

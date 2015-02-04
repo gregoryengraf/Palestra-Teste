@@ -1,0 +1,82 @@
+﻿@model Admin.Models.eventos
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>eventos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idEvento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idEvento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ordemSite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ordemSite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tituloPt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tituloPt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tituloEn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tituloEn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tituloEs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tituloEs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sinopsePt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sinopsePt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sinopseEn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sinopseEn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sinopseEs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sinopseEs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empresas_idEmpresa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empresas_idEmpresa)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

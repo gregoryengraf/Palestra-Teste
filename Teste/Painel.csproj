@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6522C33-D568-466C-854D-CA2AE161D4BC}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Teste</RootNamespace>
+    <AssemblyName>Teste</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PessoasController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\auditorios.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\bd_entity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_entity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\bd_entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\bd_entity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_entity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\contatoEmpresa.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dados.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\empresas.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\eventos.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\funcoes.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pessoas.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\relFuncaoEventoPessoa.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\slots.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipoEvento.cs">
+      <DependentUpon>bd_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap\custom.css" />
+    <Content Include="Assets\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\css\animate.css" />
+    <Content Include="Assets\css\galeria.css" />
+    <Content Include="Assets\css\home.css" />
+    <Content Include="Assets\css\login.css" />
+    <Content Include="Assets\css\main.css" />
+    <Content Include="Assets\css\toggle-switch.css" />
+    <Content Include="Assets\datepicker\css\datepicker.css" />
+    <Content Include="Assets\datepicker\css\datepicker3.css" />
+    <Content Include="Assets\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Assets\datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Assets\fancybox\blank.gif" />
+    <Content Include="Assets\fancybox\custom.css" />
+    <Content Include="Assets\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Assets\fancybox\fancybox_loading.gif" />
+    <Content Include="Assets\fancybox\fancybox_overlay.png" />
+    <Content Include="Assets\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Assets\fancybox\fancybox_sprite.png" />
+    <Content Include="Assets\fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Assets\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Assets\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Assets\fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Assets\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Assets\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Assets\fancybox\jquery.fancybox.css" />
+    <Content Include="Assets\fancybox\jquery.fancybox.js" />
+    <Content Include="Assets\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Assets\flexslider\changelog.txt" />
+    <Content Include="Assets\flexslider\custom.css" />
+    <Content Include="Assets\flexslider\flexslider.css" />
+    <Content Include="Assets\flexslider\fonts\flexslider-icon.svg" />
+    <Content Include="Assets\flexslider\images\bg_play_pause.png" />
+    <Content Include="Assets\flexslider\jquery.flexslider-min.js" />
+    <Content Include="Assets\flexslider\jquery.flexslider.js" />
+    <Content Include="Assets\fonts\museo_slab_300-webfont.svg" />
+    <Content Include="Assets\fonts\museo_slab_300italic-webfont.svg" />
+    <Content Include="Assets\fonts\museo_slab_500-webfont.svg" />
+    <Content Include="Assets\fonts\museo_slab_700-webfont.svg" />
+    <Content Include="Assets\fonts\styles.css" />
+    <Content Include="Assets\futureglyphs\fonts\FutureGlyphs.svg" />
+    <Content Include="Assets\futureglyphs\ie7\ie7.css" />
+    <Content Include="Assets\futureglyphs\ie7\ie7.js" />
+    <Content Include="Assets\futureglyphs\style.css" />
+    <Content Include="Assets\images\apple-touch-icon-114x114.png" />
+    <Content Include="Assets\images\apple-touch-icon-120x120.png" />
+    <Content Include="Assets\images\apple-touch-icon-144x144.png" />
+    <Content Include="Assets\images\apple-touch-icon-152x152.png" />
+    <Content Include="Assets\images\apple-touch-icon-72x72.png" />
+    <Content Include="Assets\images\apple-touch-icon-76x76.png" />
+    <Content Include="Assets\images\apple-touch-icon.png" />
+    <Content Include="Assets\images\bg-hdigm-2015.jpg" />
+    <Content Include="Assets\images\bg-login.jpg" />
+    <Content Include="Assets\images\bg-slider-amarelo.jpg" />
+    <Content Include="Assets\images\bg-slider-azul.jpg" />
+    <Content Include="Assets\images\bg-slider-branco.jpg" />
+    <Content Include="Assets\images\bg-slider-ciano.jpg" />
+    <Content Include="Assets\images\bg-slider-laranja.jpg" />
+    <Content Include="Assets\images\bg-slider-preto.jpg" />
+    <Content Include="Assets\images\bg-slider-rosa.jpg" />
+    <Content Include="Assets\images\bg-slider-verde.jpg" />
+    <Content Include="Assets\images\bg-slider-vermelho.jpg" />
+    <Content Include="Assets\images\favicon_128x.png" />
+    <Content Include="Assets\images\favicon_16px.png" />
+    <Content Include="Assets\images\favicon_32px.png" />
+    <Content Include="Assets\images\favicon_64x.png" />
+    <Content Include="Assets\images\futurecom-2015-sem-simbolo.png" />
+    <Content Include="Assets\images\futurecom-2015.png" />
+    <Content Include="Assets\images\futurecom-sem-simbolo.png" />
+    <Content Include="Assets\images\futurecom.png" />
+    <Content Include="Assets\images\icon-futurecom.png" />
+    <Content Include="Assets\images\loader-blue.gif" />
+    <Content Include="Assets\images\provisuale-informa.png" />
+    <Content Include="Assets\images\tile.png" />
+    <Content Include="Assets\jasny-bootstrap\css\jasny-bootstrap.css" />
+    <Content Include="Assets\jasny-bootstrap\css\jasny-bootstrap.min.css" />
+    <Content Include="Assets\jasny-bootstrap\custom.css" />
+    <Content Include="Assets\jasny-bootstrap\js\jasny-bootstrap.js" />
+    <Content Include="Assets\jasny-bootstrap\js\jasny-bootstrap.min.js" />
+    <Content Include="Assets\js\bootbox.min.js" />
+    <Content Include="Assets\js\custom-extras.js" />
+    <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\home.js" />
+    <Content Include="Assets\js\jqBootstrapValidation.js" />
+    <Content Include="Assets\js\jquery.quicksand.js" />
+    <Content Include="Assets\js\popup.js" />
+    <Content Include="Assets\js\wow.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\bootstrap\config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\datepicker\less\datepicker.less" />
+    <Content Include="Assets\datepicker\less\datepicker3.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\flexslider\CONTRIBUTING.md" />
+    <Content Include="Assets\flexslider\flexslider.less" />
+    <Content Include="Assets\flexslider\README.mdown" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\flexslider\fonts\flexslider-icon.eot" />
+    <Content Include="Assets\flexslider\fonts\flexslider-icon.ttf" />
+    <Content Include="Assets\flexslider\fonts\flexslider-icon.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\fonts\museo_slab_300-webfont.eot" />
+    <Content Include="Assets\fonts\museo_slab_300-webfont.ttf" />
+    <Content Include="Assets\fonts\museo_slab_300-webfont.woff" />
+    <Content Include="Assets\fonts\museo_slab_300italic-webfont.eot" />
+    <Content Include="Assets\fonts\museo_slab_300italic-webfont.ttf" />
+    <Content Include="Assets\fonts\museo_slab_300italic-webfont.woff" />
+    <Content Include="Assets\fonts\museo_slab_500-webfont.eot" />
+    <Content Include="Assets\fonts\museo_slab_500-webfont.ttf" />
+    <Content Include="Assets\fonts\museo_slab_500-webfont.woff" />
+    <Content Include="Assets\fonts\museo_slab_700-webfont.eot" />
+    <Content Include="Assets\fonts\museo_slab_700-webfont.ttf" />
+    <Content Include="Assets\fonts\museo_slab_700-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\futureglyphs\fonts\FutureGlyphs.eot" />
+    <Content Include="Assets\futureglyphs\fonts\FutureGlyphs.ttf" />
+    <Content Include="Assets\futureglyphs\fonts\FutureGlyphs.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\includes\head-extras.php" />
+    <Content Include="Assets\includes\head.php" />
+    <Content Include="Assets\includes\scripts-extras.php" />
+    <Content Include="Assets\includes\scripts.php" />
+    <Content Include="Assets\includes\sql_conect.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\jasny-bootstrap\config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PV_head.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PV_scripts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PV_scripts_extra.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\slots.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\bd_entity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>bd_entity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\bd_entity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bd_entity.edmx</DependentUpon>
+      <LastGenOutput>bd_entity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\bd_entity.edmx.diagram">
+      <DependentUpon>bd_entity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\bd_entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>bd_entity.edmx</DependentUpon>
+      <LastGenOutput>bd_entity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoas\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoas\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoas\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoas\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pessoas\Delete.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50409</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50409/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

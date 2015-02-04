@@ -1,0 +1,24 @@
+#slider{
+	background: url('http://www.futurecom.com.br/assets/images/loader-blue.gif') center no-repeat #0f3c6f;
+}
+
+#marquee-patrocinadores .marquee {
+	border-radius: 10px;
+	border       : 1px solid #ccc;
+	margin-bottom: 20px;
+	margin       : 0 auto;
+	overflow     : hidden;
+	padding      : 10px;
+	width        : 80%;
+}
+
+.marquee img {
+	margin   : 0 20px;
+	max-width: 75px;
+}
+
+@media screen and (min-width: 992px) {
+	#tv .container {
+		background: url('../../images/bg-tv.png') no-repeat bottom left; height: 400px;
+	}
+}

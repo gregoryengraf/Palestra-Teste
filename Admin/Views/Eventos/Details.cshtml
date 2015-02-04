@@ -1,0 +1,78 @@
+﻿@model Admin.Models.eventos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>eventos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idEvento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idEvento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ordemSite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ordemSite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tituloPt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tituloPt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tituloEn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tituloEn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tituloEs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tituloEs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sinopsePt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sinopsePt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sinopseEn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sinopseEn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sinopseEs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sinopseEs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empresas_idEmpresa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empresas_idEmpresa)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

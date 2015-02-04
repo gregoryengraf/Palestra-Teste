@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Futurecom's Customized Admin Template">
+    <meta name="author" content="Futurecom Development Team">
+
+    <!-- Common head includes -->
+    @Html.Partial("PV_head")
+
+    <title>@ViewBag.Title - Palestras 2015</title>
+</head>
+
+<body role="document">
+    <!-- Fixed navbar -->
+    <nav class="jasny-navbar navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target=".navmenu">
+                    <span class="sr-only">Abrir menu</span>
+                    <i class="icon-menu"></i>
+                </button>
+                <a class="navbar-brand" href="../sobre"><i class="icon-microfone"></i> Sistema Palestra</a>
+            </div>
+            <div id="navbar" class="navbar-right hidden-xs">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ir para <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="http://pt.futurecom.com.br/" target="_blank"><i class="icon-futurecom"></i> Site Oficial</a></li>
+                            <li><a href="http://www.futurecom.com.br/dev" target="_blank"><i class="icon-globo"></i> DEV</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="navbar-text">Olá, Marilene</p>
+                <ul class="nav navbar-nav">
+                    <li><a href="javascript:void(0);" class="navbar-logoff"><i class="icon-xis"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fixed navmenu -->
+    <nav class="navmenu navmenu-default navmenu-fixed-left">
+        <ul class="nav navmenu-nav">
+            <li><a href="@Url.Action("slots")"><i class="icon-flamula navmenu-icon"></i>Slots</a></li>
+            <li>@Html.ActionLink("Pessoas", "Index", "Pessoas")</li>
+            <li><a href="../pessoas/"><i class="icon-homem navmenu-icon"></i> Pessoas</a></li>
+            <li><a href="../eventos/"><i class="icon-flamula-estrela navmenu-icon"></i> Eventos</a></li>
+            <li><a href="../formulários/"><i class="icon-documento navmenu-icon"></i> Formulários</a></li>
+        </ul>
+        <hr />
+        <ul class="nav navmenu-nav">
+            <li><a href="http://www.futurecom.com.br/agenda"><i class="icon-calendario navmenu-icon"></i> Agenda Futurecom</a></li>
+            <li><a href="http://www.futurecom.com.br/admin"><i class="icon-futurecom navmenu-icon"></i> FutureAdmin</a></li>
+            <li><a href="http://www.futurecom.com.br/admin"><i class="icon-atomo navmenu-icon"></i> FutureMaster</a></li>
+        </ul>
+        <div class="nav navmenu-nav visible-xs visible-sm">
+            <hr />
+            <p class="navmenu-text">Logado como <a href="#" class="btn btn-xs btn-labeled btn-default ">Marilene<span class="btn-label btn-label-right"><i class="icon-xis"></i></span></a></p>
+        </div>
+    </nav>
+
+    <!-- Canvas -->
+    <div class="canvas">
+        @RenderBody()
+    </div><!-- /.canvas -->
+
+        @Html.Partial("PV_scripts")
+</body>
+</html>

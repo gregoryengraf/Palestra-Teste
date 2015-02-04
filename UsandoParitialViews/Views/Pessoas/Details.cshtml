@@ -1,0 +1,190 @@
+﻿@model UsandoParitialViews.Models.pessoas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>pessoas</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.id_prof)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.id_prof)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idSap)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idSap)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nomeCurto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nomeCurto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sexo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sexo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cargoPt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargoPt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cargoEn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargoEn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cargoEs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cargoEs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.foneFixo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.foneFixo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.foneMovel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.foneMovel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.foto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.foto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.endereco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cidade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pais)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pais)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cep)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cep)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.curriculoPt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.curriculoPt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.curriculoEn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.curriculoEn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.curriculoEs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.curriculoEs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.observacoes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.observacoes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.contato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.emailContato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.emailContato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.foneContato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.foneContato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empresas_idEmpresa)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empresas_idEmpresa)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id=Model.id_prof}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
